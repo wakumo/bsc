@@ -20,5 +20,8 @@ COPY --from=builder /go-ethereum/build/bin/geth /usr/local/bin/
 ADD config.toml .
 ADD genesis.json .
 
+ADD start.sh /
+RUN chmod +x /start.sh
+
 EXPOSE 8545 8546 8547 30303 30303/udp
-ENTRYPOINT ["geth", "init", "genesis.json"]
+CMD ["./start.sh"]

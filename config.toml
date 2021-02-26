@@ -55,6 +55,7 @@ MaxMessageSize = 1048576
 RestrictConnectionBetweenLightClients = true
 
 [Node]
+DataDir = "./root/.ethereum/node"
 omitempty = ""
 InsecureUnlockAllowed = false
 NoUSB = true
@@ -62,7 +63,7 @@ IPCPath = "geth.ipc"
 HTTPHost = "127.0.0.1"
 HTTPPort = 8575
 HTTPVirtualHosts = ["*"]
-HTTPModules = ["debug","eth", "net", "web3", "txpool", "parlia"]
+HTTPModules = ["debug","eth", "net", "web3", "txpool"]
 WSPort = 8576
 WSModules = ["net", "web3", "eth"]
 GraphQLPort = 8577
@@ -71,13 +72,9 @@ GraphQLVirtualHosts = ["*"]
 [Node.P2P]
 MaxPeers = 50
 ListenAddr = ":30311"
-EnableMsgEvents = false
 
 [Node.HTTPTimeouts]
 ReadTimeout = 30000000000
 WriteTimeout = 30000000000
 IdleTimeout = 120000000000
-
-[Node.LogConfig]
-MaxBytesSize = 10485760
 

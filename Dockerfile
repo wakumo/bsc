@@ -17,9 +17,6 @@ FROM alpine:latest
 RUN apk add --no-cache ca-certificates curl jq
 COPY --from=builder /go-ethereum/build/bin/geth /usr/local/bin/
 
-ADD config.toml .
-ADD genesis.json .
-
 ADD start.sh /
 RUN chmod +x /start.sh
 
